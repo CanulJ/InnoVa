@@ -1,0 +1,317 @@
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-brand">ZTech Solutions</div>
+
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <button class="nav-cta">Solicitar Cotización</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <span class="hero-tag">Soluciones Tecnológicas</span>
+
+    <h1>
+      Seguridad, Redes y
+      <br>
+      <span class="highlight">Desarrollo de Software</span>
+    </h1>
+
+    <p>
+      Instalamos sistemas de videovigilancia, configuramos redes empresariales
+      y desarrollamos software a la medida para impulsar el crecimiento de tu negocio.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn-primary">Solicitar Cotización</button>
+      <button class="btn-outline">Nuestros Servicios</button>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+
+  <div class="hero-blob"></div>
+
+  <img
+    src="/img/Logo.png"
+    alt="ZTech Solutions"
+    class="hero-image">
+
+</div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section cards-section" id="servicios">
+  <div class="section-header">
+    <h2>Nuestros Servicios</h2>
+    <p>Soluciones tecnológicas para hogares, negocios y empresas</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card" *ngFor="let card of cards">
+      <div class="card-icon">{{ card.icon }}</div>
+      <h3>{{ card.title }}</h3>
+      <p>{{ card.desc }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE ELEGIRNOS -->
+<section class="section">
+  <div class="section-header">
+    <h2>¿Por Qué Elegirnos?</h2>
+    <p>Comprometidos con brindar soluciones confiables y profesionales</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">🛠️</div>
+      <h3>Experiencia Técnica</h3>
+      <p>
+        Contamos con conocimientos en videovigilancia, redes y desarrollo de software.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Atención Rápida</h3>
+      <p>
+        Respuesta oportuna para resolver incidencias y atender nuevos proyectos.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <h3>Seguridad</h3>
+      <p>
+        Implementamos soluciones diseñadas para proteger tus instalaciones y datos.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h3>Soporte Continuo</h3>
+      <p>
+        Acompañamiento y asesoría incluso después de finalizar cada proyecto.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TABLA -->
+<section class="section table-section" id="proyectos">
+  <div class="section-header">
+    <h2>Áreas de Especialización</h2>
+    <p>Servicios adaptados para distintos tipos de clientes</p>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="data-table">
+
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Hogar</th>
+          <th>Negocio</th>
+          <th>Empresa</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Cámaras de Seguridad</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+        </tr>
+
+        <tr>
+          <td>Redes WiFi</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+        </tr>
+
+        <tr>
+          <td>Cableado Estructurado</td>
+          <td class="cross">✗</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+        </tr>
+
+        <tr>
+          <td>Desarrollo Web</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+        </tr>
+
+        <tr>
+          <td>Sistemas Empresariales</td>
+          <td class="cross">✗</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+        </tr>
+
+        <tr>
+          <td>Soporte Técnico</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-header">
+    <h2>Nuestro Proceso</h2>
+    <p>Trabajamos de forma clara y profesional en cada proyecto</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card">
+      <div class="card-icon">📞</div>
+      <h3>1. Contacto</h3>
+      <p>Escuchamos tus necesidades y analizamos tu proyecto.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <h3>2. Cotización</h3>
+      <p>Te presentamos una propuesta clara y transparente.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🛠️</div>
+      <h3>3. Implementación</h3>
+      <p>Realizamos la instalación o desarrollo de la solución.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h3>4. Soporte</h3>
+      <p>Te acompañamos después de finalizar el proyecto.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section form-section" id="contacto">
+  <div class="form-container">
+
+    <div class="form-info">
+      <h2>Solicita una Cotización</h2>
+
+      <p>
+        Cuéntanos tu proyecto y te responderemos con una propuesta personalizada.
+      </p>
+
+      <ul class="form-benefits">
+        <li>✓ Atención personalizada</li>
+        <li>✓ Diagnóstico sin compromiso</li>
+        <li>✓ Soluciones para hogares y empresas</li>
+      </ul>
+    </div>
+
+    <form class="contact-form" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Nombre</label>
+        <input
+          type="text"
+          [(ngModel)]="form.name"
+          name="name"
+          placeholder="Tu nombre"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input
+          type="email"
+          [(ngModel)]="form.email"
+          name="email"
+          placeholder="tu@correo.com"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Mensaje</label>
+        <textarea
+          [(ngModel)]="form.message"
+          name="message"
+          rows="4"
+          placeholder="Describe el servicio que necesitas">
+        </textarea>
+      </div>
+
+      <button type="submit" class="btn-primary full-width">
+        Solicitar Información
+      </button>
+
+      <p class="form-success" *ngIf="submitted">
+        ¡Mensaje enviado! Te contactaremos pronto.
+      </p>
+
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <div class="nav-brand">ZTech Solutions</div>
+
+      <p>
+        Soluciones en videovigilancia, redes y desarrollo de software para hogares,
+        negocios y empresas.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Navegación</h4>
+
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Servicios</h4>
+
+      <ul>
+        <li><a href="#">Videovigilancia</a></li>
+        <li><a href="#">Redes y Cableado</a></li>
+        <li><a href="#">Desarrollo Web</a></li>
+        <li><a href="#">Software Empresarial</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 ZTech Solutions. Todos los derechos reservados.</p>
+  </div>
+
+</footer>
