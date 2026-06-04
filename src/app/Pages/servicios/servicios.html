@@ -1,0 +1,161 @@
+<!-- HERO SERVICIOS -->
+<section class="page-hero">
+  <span class="hero-tag">Lo que ofrecemos</span>
+  <h1>Nuestros <span class="highlight">Servicios</span></h1>
+  <p>Soluciones tecnológicas integrales para hogares, negocios y empresas en Ciudad del Carmen y la región.</p>
+</section>
+
+<!-- CATEGORÍAS DE SERVICIOS -->
+<section class="section" id="videovigilancia">
+  <div class="service-block">
+    <div class="service-info">
+      <div class="service-badge">📷</div>
+      <h2>Videovigilancia</h2>
+      <p>Instalamos y configuramos sistemas de cámaras de seguridad CCTV e IP para proteger tus instalaciones las 24 horas del día.</p>
+      <ul class="service-features">
+        <li>✓ Cámaras HD / 4K para interior y exterior</li>
+        <li>✓ Grabación en NVR / DVR local o en la nube</li>
+        <li>✓ Acceso remoto desde tu celular</li>
+        <li>✓ Detección de movimiento e inteligencia artificial</li>
+        <li>✓ Instalación y mantenimiento incluidos</li>
+      </ul>
+      <button class="btn-primary" (click)="solicitarServicio('Videovigilancia')">Solicitar Cotización</button>
+    </div>
+    <div class="service-visual cam-visual">
+      <div class="visual-card" *ngFor="let item of camaraItems">
+        <span class="visual-icon">{{ item.icon }}</span>
+        <span class="visual-label">{{ item.label }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- REDES -->
+<section class="section bg-light" id="redes">
+  <div class="service-block reverse">
+    <div class="service-visual net-visual">
+      <div class="net-diagram">
+        <div class="net-node center">🌐<span>Internet</span></div>
+        <div class="net-row">
+          <div class="net-node">🔀<span>Router</span></div>
+          <div class="net-node">📡<span>WiFi AP</span></div>
+          <div class="net-node">🔌<span>Switch</span></div>
+        </div>
+        <div class="net-row">
+          <div class="net-node small">💻</div>
+          <div class="net-node small">📱</div>
+          <div class="net-node small">🖥️</div>
+          <div class="net-node small">🖨️</div>
+        </div>
+      </div>
+    </div>
+    <div class="service-info">
+      <div class="service-badge">🌐</div>
+      <h2>Redes y Conectividad</h2>
+      <p>Diseñamos e instalamos infraestructura de red para que tu hogar o empresa tenga una conectividad estable y segura.</p>
+      <ul class="service-features">
+        <li>✓ Redes WiFi de alta cobertura (Mesh / AP)</li>
+        <li>✓ Cableado estructurado Cat6 / Cat6A</li>
+        <li>✓ Configuración de routers y switches</li>
+        <li>✓ VPN y segmentación de redes</li>
+        <li>✓ Mantenimiento preventivo y correctivo</li>
+      </ul>
+      <button class="btn-primary" (click)="solicitarServicio('Redes')">Solicitar Cotización</button>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- DESARROLLO -->
+<section class="section" id="desarrollo">
+  <div class="service-block">
+    <div class="service-info">
+      <div class="service-badge">💻</div>
+      <h2>Desarrollo de Software</h2>
+      <p>Creamos soluciones digitales a la medida: desde páginas web hasta sistemas empresariales completos.</p>
+      <ul class="service-features">
+        <li>✓ Páginas web y landing pages</li>
+        <li>✓ Sistemas de gestión empresarial</li>
+        <li>✓ Aplicaciones web a la medida</li>
+        <li>✓ Integración con APIs y servicios externos</li>
+        <li>✓ Mantenimiento y soporte continuo</li>
+      </ul>
+      <button class="btn-primary" (click)="solicitarServicio('Desarrollo de Software')">Solicitar Cotización</button>
+    </div>
+    <div class="service-visual dev-visual">
+      <div class="code-window">
+        <div class="code-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-title">app.service.ts</span>
+        </div>
+        <div class="code-body">
+          <p><span class="kw">@Injectable</span>()</p>
+          <p><span class="kw">export class</span> <span class="cl">ZTechService</span> &#123;</p>
+          <p>&nbsp;&nbsp;<span class="fn">buildSolution</span>() &#123;</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="st">'success'</span>;</p>
+          <p>&nbsp;&nbsp;&#125;</p>
+          <p>&#125;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SOPORTE -->
+<section class="section bg-light" id="soporte">
+  <div class="service-block reverse">
+    <div class="service-visual">
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of stats">
+          <div class="stat-number">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="service-info">
+      <div class="service-badge">🛠️</div>
+      <h2>Soporte Técnico</h2>
+      <p>Brindamos asistencia técnica rápida y eficiente para mantener tu equipo e infraestructura en óptimas condiciones.</p>
+      <ul class="service-features">
+        <li>✓ Diagnóstico y reparación de equipos</li>
+        <li>✓ Mantenimiento preventivo</li>
+        <li>✓ Soporte remoto y en sitio</li>
+        <li>✓ Actualización de sistemas y software</li>
+        <li>✓ Respaldo y recuperación de datos</li>
+      </ul>
+      <button class="btn-primary" (click)="solicitarServicio('Soporte Técnico')">Solicitar Cotización</button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL COTIZACIÓN -->
+<div class="modal-overlay" *ngIf="showModal" (click)="cerrarModal()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="cerrarModal()">✕</button>
+    <h3>Solicitar Cotización</h3>
+    <p class="modal-sub">Servicio: <strong>{{ servicioSeleccionado }}</strong></p>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" [(ngModel)]="form.name" name="name" placeholder="Tu nombre" required />
+      </div>
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input type="email" [(ngModel)]="form.email" name="email" placeholder="tu@correo.com" required />
+      </div>
+      <div class="form-group">
+        <label>Mensaje</label>
+        <textarea [(ngModel)]="form.message" name="message" rows="3" placeholder="Cuéntanos tu proyecto..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary full-width">Enviar Solicitud</button>
+      <p class="form-success" *ngIf="submitted">¡Mensaje enviado! Te contactaremos pronto.</p>
+    </form>
+  </div>
+</div>

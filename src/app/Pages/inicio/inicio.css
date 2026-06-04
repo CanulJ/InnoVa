@@ -63,6 +63,24 @@
   transition: background 0.2s;
 }
 
+.nav-service-btn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.nav-service-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
 .nav-cta:hover { background: var(--primary-dark); }
 
 /* ===== HERO ===== */
