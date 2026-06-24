@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <!-- HERO SERVICIOS -->
 <section class="page-hero">
   <span class="hero-tag">Lo que ofrecemos</span>
@@ -19,7 +20,7 @@
         <li>✓ Detección de movimiento e inteligencia artificial</li>
         <li>✓ Instalación y mantenimiento incluidos</li>
       </ul>
-      <button class="btn-primary" (click)="solicitarServicio('Videovigilancia')">Solicitar Cotización</button>
+      <button class="btn-primary" (click)="solicitarServicio('Videovigilancia')"> Continuar por WhatsApp</button>
     </div>
     <div class="service-visual cam-visual">
       <div class="visual-card" *ngFor="let item of camaraItems">
@@ -62,7 +63,7 @@
         <li>✓ VPN y segmentación de redes</li>
         <li>✓ Mantenimiento preventivo y correctivo</li>
       </ul>
-      <button class="btn-primary" (click)="solicitarServicio('Redes')">Solicitar Cotización</button>
+      <button class="btn-primary" (click)="solicitarServicio('Redes')">Continuar por WhatsApp</button>
     </div>
   </div>
 </section>
@@ -83,7 +84,7 @@
         <li>✓ Integración con APIs y servicios externos</li>
         <li>✓ Mantenimiento y soporte continuo</li>
       </ul>
-      <button class="btn-primary" (click)="solicitarServicio('Desarrollo de Software')">Solicitar Cotización</button>
+      <button class="btn-primary" (click)="solicitarServicio('Desarrollo de Software')">Continuar por WhatsApp</button>
     </div>
     <div class="service-visual dev-visual">
       <div class="code-window">
@@ -130,7 +131,7 @@
         <li>✓ Actualización de sistemas y software</li>
         <li>✓ Respaldo y recuperación de datos</li>
       </ul>
-      <button class="btn-primary" (click)="solicitarServicio('Soporte Técnico')">Solicitar Cotización</button>
+      <button class="btn-primary" (click)="solicitarServicio('Soporte Técnico')">Continuar por WhatsApp</button>
     </div>
   </div>
 </section>
@@ -140,7 +141,13 @@
   <div class="modal" (click)="$event.stopPropagation()">
     <button class="modal-close" (click)="cerrarModal()">✕</button>
     <h3>Solicitar Cotización</h3>
-    <p class="modal-sub">Servicio: <strong>{{ servicioSeleccionado }}</strong></p>
+    <p class="modal-sub">
+  Servicio: <strong>{{ servicioSeleccionado }}</strong>
+</p>
+
+<p class="whatsapp-notice">
+  Al enviar la solicitud se abrirá WhatsApp con la información capturada para que puedas enviarnos tu cotización.
+</p>
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label>Nombre</label>

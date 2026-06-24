@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Navbar } from '../navbar/navbar';
 
 @Component({
   selector: 'app-inicio',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, Navbar],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css',
 })
@@ -13,7 +14,9 @@ export class Inicio {
 
   constructor(private router: Router) {}
 
-  submitted = false;
+  showModal = false;
+  step = 1;
+  servicioSeleccionado = '';
 
   form = {
     name: '',
@@ -28,13 +31,44 @@ export class Inicio {
     { icon: '🤝', title: 'Soporte', desc: 'Equipo disponible 24/7 para resolver tus dudas.' },
   ];
 
-  onSubmit() {
-    this.submitted = true;
+  abrirCotizacion() {
+    this.showModal = true;
+    this.step = 1;
+    this.servicioSeleccionado = '';
 
-    setTimeout(() => {
-      this.submitted = false;
-      this.form = { name: '', email: '', message: '' };
-    }, 3000);
+    this.form = {
+      name: '',
+      email: '',
+      message: ''
+    };
+  }
+
+  seleccionarServicio(servicio: string) {
+    this.servicioSeleccionado = servicio;
+    this.step = 2;
+  }
+
+  onSubmit() {
+
+    if (!this.servicioSeleccionado) return;
+
+    const texto = `
+*SOLICITUD ZTECH*
+
+Servicio: ${this.servicioSeleccionado}
+Nombre: ${this.form.name}
+Correo: ${this.form.email}
+
+Mensaje:
+${this.form.message}
+`;
+
+    const url =
+      `https://api.whatsapp.com/send?phone=529936024613&text=${encodeURIComponent(texto)}`;
+
+    window.open(url, '_blank');
+
+    this.showModal = false;
   }
 
   irServicios() {

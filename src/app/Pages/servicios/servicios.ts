@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Navbar } from '../navbar/navbar';
 
 @Component({
   selector: 'app-servicios',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, Navbar],
   templateUrl: './servicios.html',
   styleUrl: './servicios.css',
 })
@@ -48,13 +49,26 @@ export class Servicios {
     this.showModal = false;
   }
  
-  onSubmit() {
-    this.submitted = true;
-    setTimeout(() => {
-      this.submitted = false;
-      this.showModal = false;
-      this.form = { name: '', email: '', message: '' };
-    }, 2500);
-  }
+ onSubmit() {
+
+  const texto = `
+Hola, me gustaría solicitar una cotización.
+
+Servicio: ${this.servicioSeleccionado}
+
+Nombre: ${this.form.name}
+Correo: ${this.form.email}
+
+Descripción:
+${this.form.message}
+`;
+
+  const whatsappUrl =
+    `https://api.whatsapp.com/send?phone=529936024613&text=${encodeURIComponent(texto)}`;
+
+  window.open(whatsappUrl, '_blank');
+
+  this.showModal = false;
+}
 
 }
