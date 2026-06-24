@@ -593,21 +593,59 @@
   resize: none;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .page-hero { padding: 72px 24px 48px; }
-  .section { padding: 60px 20px; }
 
-  .service-block,
-  .service-block.reverse {
-    grid-template-columns: 1fr;
+  /* Hero: colapsar a columna */
+  .hero {
+    flex-direction: column;
+    padding: 60px 24px 40px;
+    text-align: center;
     gap: 40px;
-    direction: ltr;
   }
 
-  .cam-visual { grid-template-columns: repeat(2, 1fr); }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-content {
+    max-width: 100%;
+  }
 
-  .modal { padding: 32px 24px; }
+  .hero-actions {
+    justify-content: center;
+  }
+
+  /* Hero visual: quitar el translateX hardcoded */
+  .hero-visual {
+    transform: none;
+    width: 100%;
+    height: 300px;
+  }
+
+  .hero-image {
+    width: 260px;
+  }
+
+  .hero-blob {
+    width: 280px;
+    height: 280px;
+  }
+
+  /* Secciones: corregir el selector (estaba como .page-hero) */
+  .section {
+    padding: 60px 20px;
+  }
+
+  /* Formulario de contacto: una columna */
+  .form-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Footer: una columna */
+  .footer {
+    padding: 48px 24px 24px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
 }
-
