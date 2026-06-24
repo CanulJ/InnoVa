@@ -593,3 +593,21 @@
   resize: none;
 }
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .page-hero { padding: 72px 24px 48px; }
+  .section { padding: 60px 20px; }
+
+  .service-block,
+  .service-block.reverse {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    direction: ltr;
+  }
+
+  .cam-visual { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .modal { padding: 32px 24px; }
+}
+
