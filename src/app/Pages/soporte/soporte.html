@@ -1,0 +1,103 @@
+<section class="section faq-section" id="contacto">
+  <div class="faq-container">
+
+    <!-- Info lateral -->
+    <div class="faq-info">
+      <span class="hero-tag">Asistente Virtual</span>
+      <h2>¿Tienes alguna <span class="highlight">pregunta?</span></h2>
+      <p>Nuestro asistente responde tus dudas al instante. Si necesitas algo más personalizado, te conectamos con nuestro equipo vía WhatsApp.</p>
+      <ul class="form-benefits">
+        <li>✓ Respuestas inmediatas</li>
+        <li>✓ Información sobre precios y servicios</li>
+        <li>✓ Cotización gratuita sin compromiso</li>
+      </ul>
+      <button class="btn-primary" style="margin-top: 24px;" (click)="abrirWhatsApp()">
+        💬 Hablar con un asesor
+      </button>
+    </div>
+
+    <!-- Chat integrado -->
+    <div class="chat-box">
+      <div class="chat-header">
+        <div class="chat-avatar">Z</div>
+        <div>
+          <div class="chat-name">ZTech Assistant</div>
+          <div class="chat-status"><span class="status-dot"></span> En línea</div>
+        </div>
+      </div>
+
+      <div class="chat-messages" #scrollTarget>
+        <ng-container *ngFor="let msg of mensajes">
+
+          <!-- Burbuja del mensaje -->
+          <div class="message" [class.user]="msg.role === 'user'" [class.bot]="msg.role === 'bot'">
+            <div class="message-bubble" [innerHTML]="msg.text"></div>
+          </div>
+
+          <!-- Opciones justo debajo del mensaje bot -->
+          <div class="opciones-row" *ngIf="msg.role === 'bot' && msg.opciones && msg.opciones.length">
+            <button
+              *ngFor="let op of msg.opciones"
+              class="opcion-btn"
+              (click)="elegir(op)">
+              {{ op.label }}
+            </button>
+          </div>
+
+        </ng-container>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BURBUJA FLOTANTE
+     ============================================================ -->
+<div class="fab-wrapper">
+
+  <!-- Tooltip de bienvenida -->
+  <div class="fab-tooltip" *ngIf="mostrarTooltip && !chatAbierto">
+
+    <button class="tooltip-close" (click)="mostrarTooltip = false">✕</button>
+  </div>
+
+  <!-- Ventana flotante -->
+  <div class="fab-chat" [class.visible]="chatAbierto">
+    <div class="chat-header">
+      <div class="chat-avatar">Z</div>
+      <div>
+        <div class="chat-name">ZTech Assistant</div>
+        <div class="chat-status"><span class="status-dot"></span> En línea</div>
+      </div>
+      <button class="fab-close" (click)="chatAbierto = false">✕</button>
+    </div>
+
+    <div class="chat-messages fab-messages" #scrollTargetFab>
+      <ng-container *ngFor="let msg of mensajesFab">
+
+        <div class="message" [class.user]="msg.role === 'user'" [class.bot]="msg.role === 'bot'">
+          <div class="message-bubble" [innerHTML]="msg.text"></div>
+        </div>
+
+        <div class="opciones-row" *ngIf="msg.role === 'bot' && msg.opciones && msg.opciones.length">
+          <button
+            *ngFor="let op of msg.opciones"
+            class="opcion-btn"
+            (click)="elegirFab(op)">
+            {{ op.label }}
+          </button>
+        </div>
+
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Botón FAB -->
+  <button class="fab-btn" (click)="toggleChat()" [class.open]="chatAbierto">
+    <span class="fab-icon-chat">💬</span>
+    <span class="fab-icon-close">✕</span>
+  </button>
+
+</div>

@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Navbar } from '../navbar/navbar';
+import { Soporte } from '../soporte/soporte';
 
 @Component({
   selector: 'app-inicio',
-  imports: [CommonModule, FormsModule, Navbar],
+  imports: [CommonModule, FormsModule, Navbar, Soporte],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css',
 })
