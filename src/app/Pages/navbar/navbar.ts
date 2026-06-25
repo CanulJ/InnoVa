@@ -72,4 +72,16 @@ irServicios() {
     this.router.navigate(['/proyectos']);
   }
 
+// Agrega esta propiedad y estos métodos a tu navbar.component.ts
+
+menuAbierto = false;
+
+toggleMenu(): void {
+  this.menuAbierto = !this.menuAbierto;
+}
+
+cerrarMenu(): void {
+  this.menuAbierto = false;
+}
+
 }

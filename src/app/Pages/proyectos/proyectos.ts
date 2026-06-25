@@ -34,18 +34,13 @@ export class Proyectos {
   submitted  = false;
   form = { name: '', email: '', message: '' };
  
-  /* ── Proyectos ─────────────────────────────────────────────────────────────
-   *  Reemplaza cada objeto con tus datos reales.
-   *  - imagen: ruta relativa desde /assets/ o URL absoluta
-   *  - ubicacion y año son opcionales, elimina la propiedad si no aplica
-   * ─────────────────────────────────────────────────────────────────────── */
   proyectos: Proyecto[] = [
     {
       id: 1,
       titulo: 'Sistema CCTV Residencial',
       descripcion: 'Instalación de 8 cámaras HD en exterior e interior con grabación local en DVR y acceso remoto desde celular.',
       categoria: 'Videovigilancia',
-      imagen: 'img/WebCR.jpeg',
+      imagen: 'img/WebCR.webp',
       ubicacion: 'Ciudad del Carmen',
       anio: 2024
     },
@@ -54,7 +49,7 @@ export class Proyectos {
       titulo: 'Red Empresarial con Cableado Cat6',
       descripcion: 'Diseño e instalación de cableado estructurado Cat6 con switch administrable y puntos de acceso WiFi para 40 usuarios.',
       categoria: 'Redes',
-      imagen: 'img/CE.jpeg',
+      imagen: 'img/CE.webp',
       ubicacion: 'Ciudad del Carmen',
       anio: 2024
     },
@@ -63,7 +58,7 @@ export class Proyectos {
       titulo: 'Aplicacion Web para ventas en línea',
       descripcion: 'Desarrollo de aplicacion web para ventas de plataformas en linea optimizado para contacto directo mediante whatsapp.',
       categoria: 'Desarrollo Web',
-      imagen: 'img/WebI.png',
+      imagen: 'img/WebI.webp',
       ubicacion: 'Ciudad del Carmen',
       anio : 2025
     },
@@ -72,7 +67,7 @@ export class Proyectos {
       titulo: 'Sistema de Videovigilancia Comercial',
       descripcion: 'Instalación de 16 cámaras IP 4K en local comercial con detección de movimiento e integración a plataforma en la nube.',
       categoria: 'Videovigilancia',
-      imagen: 'img/VGE.jpg',
+      imagen: 'img/VGE.webp',
       ubicacion: 'Ciudad del Carmen',
       anio: 2025
     },
@@ -81,7 +76,7 @@ export class Proyectos {
       titulo: 'Red Mesh para Oficinas',
       descripcion: 'Implementación de red WiFi Mesh de alta cobertura en dos plantas de oficinas, eliminando zonas sin señal.',
       categoria: 'Redes',
-      imagen: 'img/MER.jpeg',
+      imagen: 'img/MER.webp',
       ubicacion: 'Campeche',
       anio: 2025
     },
@@ -90,7 +85,7 @@ export class Proyectos {
       titulo: 'Mantenimiento de Equipos de Cómputo',
       descripcion: 'Mantenimiento preventivo y actualización de software en 20 equipos para empresa local, reduciendo fallas un 70%.',
       categoria: 'Soporte Técnico',
-      imagen: 'img/MC.jpg',
+      imagen: 'img/MC.webp',
       ubicacion: 'Ciudad del Carmen',
       anio: 2025
     },
