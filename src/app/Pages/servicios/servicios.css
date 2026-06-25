@@ -414,8 +414,30 @@
   .cam-visual { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
-  .modal { padding: 32px 24px; }
-}
+/* Diagrama de red */
+  .net-diagram { padding: 20px 12px; }
+  .net-row { gap: 8px; flex-wrap: wrap; }
+  .net-node { min-width: 58px; padding: 10px 12px; font-size: 1.1rem; }
+  .net-node.center { padding: 14px 18px; font-size: 1.4rem; }
+  .net-node.small { min-width: 44px; padding: 8px 10px; font-size: 0.95rem; }
+
+  /* Ventana de código */
+  .code-body {
+    padding: 20px 16px;
+    font-size: 0.78rem;
+    overflow-x: auto;
+  }
+
+  /* Tarjetas de cámara */
+  .visual-card { padding: 16px 10px; }
+
+  /* Modal con scroll en pantallas bajas */
+  .modal {
+    padding: 28px 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
 
 .whatsapp-notice {
   background: #f0fdf4;
@@ -427,3 +449,5 @@
   margin-bottom: 20px;
   line-height: 1.5;
 }
+
+} 

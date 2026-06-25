@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+
+<!-- HERO PROYECTOS -->
+<section class="page-hero">
+  <span class="hero-tag">Nuestro trabajo</span>
+  <h1>Proyectos <span class="highlight">Realizados</span></h1>
+  <p>Cada proyecto es una solución real para un cliente real. Aquí te mostramos parte de lo que hemos construido.</p>
+</section>
+
+<!-- FILTROS -->
+<section class="filter-section">
+  <div class="filter-bar">
+    <button
+      class="filter-btn"
+      [class.active]="filtroActivo === 'Todos'"
+      (click)="filtrar('Todos')">
+      Todos
+    </button>
+    <button
+      class="filter-btn"
+      *ngFor="let cat of categorias"
+      [class.active]="filtroActivo === cat"
+      (click)="filtrar(cat)">
+      {{ cat }}
+    </button>
+  </div>
+</section>
+
+<!-- GRID DE PROYECTOS -->
+<section class="section proyectos-section">
+  <div class="proyectos-grid">
+    <div
+      class="proyecto-card"
+      *ngFor="let p of proyectosFiltrados">
+
+      <!-- Imagen -->
+      <div class="proyecto-img-wrap">
+        <img [src]="p.imagen" [alt]="p.titulo" class="proyecto-img" />
+        <span class="proyecto-badge">{{ p.categoria }}</span>
+      </div>
+
+      <!-- Contenido -->
+      <div class="proyecto-body">
+        <h3>{{ p.titulo }}</h3>
+        <p>{{ p.descripcion }}</p>
+
+        <div class="proyecto-meta">
+          <span class="meta-item" *ngIf="p.ubicacion">
+            📍 {{ p.ubicacion }}
+          </span>
+          <span class="meta-item" *ngIf="p.anio">
+            📅 {{ p.anio }}
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Estado vacío -->
+  <div class="empty-state" *ngIf="proyectosFiltrados.length === 0">
+    <span class="empty-icon">🔍</span>
+    <p>No hay proyectos en esta categoría aún.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>¿Listo para ser el próximo caso de éxito?</h2>
+    <p>Cuéntanos tu proyecto y te armamos una propuesta a la medida.</p>
+  </div>
+</section>

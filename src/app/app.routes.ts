@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { Inicio } from './Pages/inicio/inicio';
 import { Servicios } from './Pages/servicios/servicios';
 import { Navbar } from './Pages/navbar/navbar';
+import { Proyectos } from './Pages/proyectos/proyectos';
+
 
 export const routes: Routes = [
 
@@ -14,4 +16,7 @@ export const routes: Routes = [
     
     {path: '', component: Navbar},
     {path: 'navbar', component: Navbar},
+
+    {path: '', component: Proyectos},
+    {path: 'proyectos', component: Proyectos},
 ];

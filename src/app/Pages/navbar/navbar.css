@@ -100,6 +100,235 @@
   color: var(--white);
 }
 
+
+/* ===== OPCIONES DEL STEP 1 ===== */
+.modal button:not(.btn-primary):not(.modal-close) {
+  width: 100%;
+  padding: 14px 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark);
+
+  cursor: pointer;
+
+  margin-bottom: 10px;
+
+  transition: all 0.2s ease;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.modal button:not(.btn-primary):not(.modal-close):hover {
+  border-color: var(--primary);
+  background: #f0f6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(15, 98, 254, 0.18);
+}
+
+.modal button:not(.btn-primary):not(.modal-close):active {
+  transform: scale(0.98);
+}
+
+/* ===== MODAL OVERLAY (igual en ambos módulos) ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+/* ===== ANIMACIÓN ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== MODAL PRINCIPAL (MISMO ESTILO QUE SERVICIOS) ===== */
+.modal {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 480px;
+
+  position: relative;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== TITULO ===== */
+.modal h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+/* ===== SUBTITULO ===== */
+.modal-sub {
+  color: var(--gray);
+  font-size: 0.93rem;
+  margin-bottom: 20px;
+}
+
+/* ===== BOTÓN CERRAR ===== */
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--gray);
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: var(--light);
+}
+
+/* ===== FORMULARIO ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--dark);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+}
+
+/* ===== BOTÓN PRINCIPAL ===== */
+.btn-primary {
+  padding: 13px 28px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.97rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* ===== MENSAJE WHATSAPP ===== */
+.whatsapp-notice {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* ===== SUCCESS ===== */
+.form-success {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 12px 16px;
+
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+
+  font-size: 0.95rem;
+  color: var(--dark);
+
+  background: var(--white);
+
+  outline: none;
+
+  transition: all 0.2s ease;
+
+  font-family: inherit;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  margin-bottom: 12px;
+}
+
+/* focus pro */
+.modal input:focus,
+.modal textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 98, 254, 0.12);
+}
+
+/* textarea tamaño correcto */
+.modal textarea {
+  min-height: 90px;
+  resize: none;
+}
+
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar { padding: 14px 20px; }
@@ -111,3 +340,4 @@
   .form-container { grid-template-columns: 1fr; gap: 32px; }
   .footer-inner { grid-template-columns: 1fr; gap: 32px; }
 }
+

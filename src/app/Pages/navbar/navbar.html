@@ -9,9 +9,82 @@
   (click)="irServicios()">
   Nuestros Servicios
 </button>
-    <li><a href="#proyectos">Proyectos</a></li>
+    <button
+  class="btn-outline"
+  (click)="irProyectos()">
+  Nuestros Proyectos
+</button>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 
-  <button class="nav-cta">Solicitar Cotización</button>
+  <button class="nav-cta" (click)="abrirCotizacion()">Solicitar Cotización</button>
 </nav>
+
+<!-- 🔥 MODAL FUERA DEL HERO (IMPORTANTE) -->
+<div class="modal-overlay" *ngIf="showModal">
+
+  <div class="modal">
+
+    <button class="modal-close" (click)="showModal = false">✕</button>
+
+    <h3>Solicitar Cotización</h3>
+    <p class="whatsapp-notice">
+  Al enviar la solicitud se abrirá WhatsApp con la información capturada para que puedas enviarnos tu cotización.
+</p>
+
+    <!-- PASO 1 -->
+    <div *ngIf="step === 1">
+      <p class="modal-sub">Selecciona el servicio</p>
+
+      <button (click)="servicioSeleccionado = 'Videovigilancia'; step = 2">
+        📷 Videovigilancia
+      </button>
+
+      <button (click)="servicioSeleccionado = 'Redes'; step = 2">
+        🌐 Redes
+      </button>
+
+      <button (click)="servicioSeleccionado = 'Desarrollo de Software'; step = 2">
+        💻 Software
+      </button>
+
+      <button (click)="servicioSeleccionado = 'Soporte Técnico'; step = 2">
+        🛠️ Soporte
+      </button>
+    </div>
+
+    <!-- PASO 2 -->
+    <form *ngIf="step === 2" (ngSubmit)="onSubmit()">
+     
+
+      <p class="modal-sub">
+        Servicio: <strong>{{ servicioSeleccionado }}</strong>
+      </p>
+
+      <input
+        [(ngModel)]="form.name"
+        name="name"
+        placeholder="Nombre"
+        required
+      />
+
+      <input
+        [(ngModel)]="form.email"
+        name="email"
+        placeholder="Correo"
+        required
+      />
+
+      <textarea
+        [(ngModel)]="form.message"
+        name="message"
+        placeholder="Mensaje"
+      ></textarea>
+
+      <button type="submit" class="btn-primary full-width">
+        Enviar por WhatsApp
+      </button>
+
+    </form>
+
+  </div>
