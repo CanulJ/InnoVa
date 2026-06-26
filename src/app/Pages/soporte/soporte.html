@@ -1,3 +1,4 @@
+<!-- SECCIÓN FAQ -->
 <section class="section faq-section" id="contacto">
   <div class="faq-container">
 
@@ -28,13 +29,9 @@
 
       <div class="chat-messages" #scrollTarget>
         <ng-container *ngFor="let msg of mensajes">
-
-          <!-- Burbuja del mensaje -->
           <div class="message" [class.user]="msg.role === 'user'" [class.bot]="msg.role === 'bot'">
             <div class="message-bubble" [innerHTML]="msg.text"></div>
           </div>
-
-          <!-- Opciones justo debajo del mensaje bot -->
           <div class="opciones-row" *ngIf="msg.role === 'bot' && msg.opciones && msg.opciones.length">
             <button
               *ngFor="let op of msg.opciones"
@@ -43,7 +40,6 @@
               {{ op.label }}
             </button>
           </div>
-
         </ng-container>
       </div>
     </div>
@@ -52,19 +48,18 @@
 </section>
 
 
-<!-- ============================================================
-     BURBUJA FLOTANTE
-     ============================================================ -->
+<!-- BURBUJA FLOTANTE -->
 <div class="fab-wrapper">
 
   <!-- Tooltip de bienvenida -->
   <div class="fab-tooltip" *ngIf="mostrarTooltip && !chatAbierto">
-
+    ¡Hola! ¿En qué puedo ayudarte? 👋
     <button class="tooltip-close" (click)="mostrarTooltip = false">✕</button>
   </div>
 
   <!-- Ventana flotante -->
   <div class="fab-chat" [class.visible]="chatAbierto">
+
     <div class="chat-header">
       <div class="chat-avatar">Z</div>
       <div>
@@ -76,11 +71,9 @@
 
     <div class="chat-messages fab-messages" #scrollTargetFab>
       <ng-container *ngFor="let msg of mensajesFab">
-
         <div class="message" [class.user]="msg.role === 'user'" [class.bot]="msg.role === 'bot'">
           <div class="message-bubble" [innerHTML]="msg.text"></div>
         </div>
-
         <div class="opciones-row" *ngIf="msg.role === 'bot' && msg.opciones && msg.opciones.length">
           <button
             *ngFor="let op of msg.opciones"
@@ -89,9 +82,9 @@
             {{ op.label }}
           </button>
         </div>
-
       </ng-container>
     </div>
+
   </div>
 
   <!-- Botón FAB -->

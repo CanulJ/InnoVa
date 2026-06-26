@@ -452,17 +452,45 @@
     gap: 36px;
   }
 
-  .chat-messages { height: 260px; }
+  /* Ocultar el chat de sección: en móvil solo se usa el FAB */
+  .chat-box { display: none; }
 
-  .fab-chat {
-    width: calc(100vw - 40px);
-    right: 0;
+  /* El info lateral ocupa todo el ancho */
+  .faq-info { text-align: center; }
+  .form-benefits { align-items: center; }
+
+  .chat-messages { height: 280px; }
+
+  /* Botones de opciones: permitir wrap y área de toque generosa */
+  .opciones-row {
+    gap: 6px;
+    padding: 4px 0;
   }
 
-  .fab-wrapper {
-    bottom: 20px;
+  .opcion-btn {
+    white-space: normal;     /* permite salto de línea en textos largos */
+    text-align: left;
+    padding: 9px 14px;       /* área táctil más grande */
+    font-size: 0.8rem;
+    line-height: 1.3;
+    /* evita que el área visual y el área de toque queden desfasadas */
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Chat flotante: ancho completo menos margen */
+  .fab-chat {
+    width: calc(100vw - 32px);
+    /* anclarlo a la derecha alineado con el botón FAB */
+    position: fixed;
+    bottom: 88px;   /* altura del FAB (56px) + gap (16px) + margen (16px) */
     right: 16px;
   }
 
-  .quick-suggestions button { font-size: 0.75rem; padding: 5px 10px; }
+  .fab-wrapper {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .fab-messages { height: 240px; }
 }
